@@ -1,35 +1,28 @@
 <?php
 
-namespace lib;
+namespace Up\Tasks;
 
-use lib\Model\TaskTable;
+use Up\Tasks\Model\TaskTable;
 
-class TaskActions {
+class TaskActions
+{
 	public static function getTaskList()
 	{
-		$tasks = TaskTable::getList(['select' => ['*']]);
-		return $tasks->fetchAll();
+		return TaskTable::getList(['select' => ['*']])->fetchAll();
 	}
 
-	public static function addTask($title, $description) {
+	public static function addTask($title, $description)
+	{
 		$result = TaskTable::add([
 			'task_name' => $title,
 			'task_description' => $description,
 		]);
 
-		if($result->isSuccess()){
-			$movieId = $result->getId();
-		}
-		else {
-			print_r($result->getErrors());
-		}
+		return $result;
 	}
 
-	public static function deleteTask($id){
-		$result = TaskTable::delete($id);
-		if(!$result->isSuccess())
-		{
-			$errors = $result->getErrors();
-		}
+	public static function deleteTask($id)
+	{
+		return TaskTable::delete($id);
 	}
 }

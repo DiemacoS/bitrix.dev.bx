@@ -1,6 +1,6 @@
 <?php
 
-namespace lib\Model;
+namespace Up\Tasks\Model;
 
 use Bitrix\Main\Entity;
 

@@ -1,5 +1,7 @@
 <?php
 
+namespace Up\Tasks;
+
 use Bitrix\Main\ModuleManager;
 use Bitrix\Main\Config\Option;
 
