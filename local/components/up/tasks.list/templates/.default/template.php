@@ -14,7 +14,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die(); ?>
         <div class="form-group">
             <label for="taskName">Название задачи</label>
             <input type="text" class="form-control" id="taskName" name="taskName">
-	        <?=bitrix_sessid_post()?>
+			<?=bitrix_sessid_post()?>
         </div>
         <div class="form-group">
             <label for="taskDescription">Описание задачи</label>
@@ -37,19 +37,19 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die(); ?>
         </thead>
         <tbody>
 		<?php foreach ($arResult['TASKS'] as $task) : ?>
-            <tr>
-                <td><?= $task['id'] ?></td>
-                <td><?= htmlspecialcharsbx($task['task_name']) ?></td>
-                <td><?= htmlspecialcharsbx($task['task_description']) ?></td>
-                <td>
+        <tr>
+            <td><?= $task['id'] ?></td>
+            <td><?= htmlspecialcharsbx($task['task_name']) ?></td>
+            <td><?= htmlspecialcharsbx($task['task_description']) ?></td>
+            <td>
                 <form method="post" action="/tasks/<?= $task['id'] ?>/delete/">
-	                <?=bitrix_sessid_post()?>
+					<?=bitrix_sessid_post()?>
                     <input type="hidden" name="method" value="delete">
                     <input type="hidden" name="id" value="<?= $task['id'] ?>">
                     <button type="submit" class="btn btn-danger">Удалить</button>
                 </form>
-                </td>
-		<?php endforeach; ?>
+            </td>
+			<?php endforeach; ?>
         </tbody>
     </table>
 

@@ -1,6 +1,5 @@
 <?php
-
-/// пример обработчика views/task-add.php
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 
 use Bitrix\Main\Loader;
 use Up\Tasks\TaskActions;
@@ -21,6 +20,4 @@ if(check_bitrix_sessid())
 	}
 }
 
-//LocalRedirect("/tasks/");
-
-// сделать редирект на /tasks
+LocalRedirect("/tasks/");

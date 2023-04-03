@@ -2,7 +2,8 @@
 /**
  * @var CMain $APPLICATION
  */
-?><!doctype html>
+?>
+<!doctype html>
 <html lang="<?= LANGUAGE_ID; ?>">
 <head>
     <meta charset="UTF-8">

@@ -1,6 +1,5 @@
 <?php
 
-
 use Bitrix\Main\Application;
 use Up\Tasks\TaskActions;
 

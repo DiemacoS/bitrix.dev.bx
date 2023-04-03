@@ -1,6 +1,6 @@
 <?php
 
-/// пример обработчика views/task-add.php
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 
 
 /**
@@ -15,12 +15,14 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 
 \Bitrix\Main\Loader::includeModule('up.tasks');
 
-if(check_bitrix_sessid()) {
+if(check_bitrix_sessid())
+{
 	$request = Application::getInstance()->getContext()->getRequest()->getPostList();
 
 	$result = TaskActions::addTask($request['taskName'], $request["taskDescription"]);
 
-	if(!$result->isSuccess()) {
+	if(!$result->isSuccess())
+	{
 		print_r($result->getErrors());
 	}
 }
